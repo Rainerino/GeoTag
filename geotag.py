@@ -147,7 +147,7 @@ def write_geo_tag(img_path, lat, lon, alt_abs, hdg=None):
     metadata into JPG image
     """
     img = Image.open(img_path)
-    if img.format != 'JPEG':
+    if not (img.format == 'JPEG' or img.format == "MPO"):
         raise ValueError('Image is not a JPEG')
 
     try:
